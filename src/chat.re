@@ -40,15 +40,6 @@ let make = (_children) => {
               ))
             )
         </ol>
-        <input
-            className="textarea"
-            onKeyDown=(
-              _event =>
-                if (ReactEventRe.Keyboard.keyCode(_event) === 13) {
-                  ReactEventRe.Keyboard.preventDefault(_event);
-                  _self.send(AddMessage("aaa"))
-                }
-            )
-            />
+        <Input/>
     </div>
 };
