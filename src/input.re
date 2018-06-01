@@ -4,18 +4,18 @@ type state = {
 
 type action =
     | UpdateMessage(string)
-    | SendMessage;
+    | Clear;
 
 let component = ReasonReact.reducerComponent("Input");
 
-let make = (_children) => {
+let make = (_children, ~onAddMessage) => {
   ...component,
   reducer: action =>
     switch (action) {
         | UpdateMessage(text) => (
             state => ReasonReact.Update({...state, message: text})
         )
-        | SendMessage => ( state => ReasonReact.Update({...state, message: ""}))
+        | Clear => ( state => ReasonReact.Update({...state, message: ""}))
     },
    initialState: () => {
         message: ""
@@ -29,7 +29,8 @@ let make = (_children) => {
           _event =>
             if (ReactEventRe.Keyboard.keyCode(_event) === 13) {
               ReactEventRe.Keyboard.preventDefault(_event);
-              _self.send(SendMessage)
+              onAddMessage(_self.state.message);
+              _self.send(Clear);
             }
         )
         />

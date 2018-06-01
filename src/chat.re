@@ -40,6 +40,6 @@ let make = (_children) => {
               ))
             )
         </ol>
-        <Input/>
+        <Input onAddMessage=((text) => _self.send(AddMessage(text)))/>
     </div>
 };

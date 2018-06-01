@@ -8,7 +8,7 @@ let make = (_children) => {
             <i className="fa fa-chevron-left"></i>
             <img src="https://i.imgur.com/DY6gND0.png"/>
         </div>
-        <div className="name">(ReasonReact.stringToElement("Alex"))</div>
+        <div className="name">(ReasonReact.stringToElement("You"))</div>
         <div className="last">(ReasonReact.stringToElement("18:09"))</div>
     </div>
 };
