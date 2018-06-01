@@ -27,7 +27,7 @@ let make = (_children) => {
         <ol className="chat">
             (
               ReasonReact.arrayToElement(Array.of_list(
-                  List.map((message) =>
+                  List.rev_map((message) =>
                         <li className="other">
                             <div className="avatar">
                                 <img src="https://i.imgur.com/DY6gND0.png"/>
