@@ -7,7 +7,7 @@
   - Magic
   
  # Run
- 
+
 ```sh
 $ npm install
 $ npm run dev
